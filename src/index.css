@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Archivo", sans-serif;
+  --font-accent: "Playfair Display", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --color-gold: #f5c518;
+  --color-gold-dark: #d9ad00;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+  font-family: var(--font-sans);
+}
+
+.honeycomb {
+  background-color: #0a0a0a;
+  background-image:
+    linear-gradient(30deg, #171717 12%, transparent 12.5%, transparent 87%, #171717 87.5%, #171717),
+    linear-gradient(150deg, #171717 12%, transparent 12.5%, transparent 87%, #171717 87.5%, #171717),
+    linear-gradient(30deg, #171717 12%, transparent 12.5%, transparent 87%, #171717 87.5%, #171717),
+    linear-gradient(150deg, #171717 12%, transparent 12.5%, transparent 87%, #171717 87.5%, #171717),
+    linear-gradient(60deg, #1c1c1c77 25%, transparent 25.5%, transparent 75%, #1c1c1c77 75%, #1c1c1c77),
+    linear-gradient(60deg, #1c1c1c77 25%, transparent 25.5%, transparent 75%, #1c1c1c77 75%, #1c1c1c77);
+  background-size: 44px 76px;
+  background-position: 0 0, 0 0, 22px 38px, 22px 38px, 0 0, 22px 38px;
+}
