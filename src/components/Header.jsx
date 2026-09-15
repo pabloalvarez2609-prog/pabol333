@@ -2,18 +2,31 @@ import { useState } from 'react'
 
 function BeeLogo() {
   return (
-    <svg viewBox="0 0 32 32" width="30" height="30" className="shrink-0 text-gold">
-      <ellipse cx="10" cy="10" rx="7" ry="4.5" fill="currentColor" opacity="0.35" transform="rotate(-25 10 10)" />
-      <ellipse cx="22" cy="10" rx="7" ry="4.5" fill="currentColor" opacity="0.35" transform="rotate(25 22 10)" />
-      <path d="M13 9 L11 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" fill="none" />
-      <path d="M19 9 L21 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" fill="none" />
-      <circle cx="11" cy="4" r="1" fill="currentColor" />
-      <circle cx="21" cy="4" r="1" fill="currentColor" />
-      <ellipse cx="16" cy="18" rx="8" ry="9" fill="currentColor" />
-      <rect x="8" y="14" width="16" height="2.2" fill="black" />
-      <rect x="8" y="18.5" width="16" height="2.2" fill="black" />
-      <rect x="8" y="23" width="16" height="2.2" fill="black" />
-      <path d="M16 27 L14 24 L18 24 Z" fill="currentColor" />
+    <svg viewBox="0 0 64 64" width="34" height="34" className="shrink-0 text-gold">
+      <path d="M20 26 C4 20 2 8 10 4 C18 2 26 12 28 24 Z" fill="currentColor" opacity="0.4" />
+      <path d="M44 26 C60 20 62 8 54 4 C46 2 38 12 36 24 Z" fill="currentColor" opacity="0.4" />
+      <path d="M26 10 L20 2 L24 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <path d="M38 10 L44 2 L40 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <circle cx="20" cy="2" r="1.6" fill="currentColor" />
+      <circle cx="44" cy="2" r="1.6" fill="currentColor" />
+      <ellipse cx="32" cy="16" rx="12" ry="9" fill="currentColor" transform="rotate(-6 32 16)" />
+      <path d="M22 13 Q26 8 31 13 Q26 17 22 13 Z" fill="black" />
+      <path d="M42 13 Q38 8 33 13 Q38 17 42 13 Z" fill="black" />
+      <path d="M21 19 Q32 27 43 19 Q32 24 21 19 Z" fill="black" />
+      <path
+        d="M24 19.5 L26 22 L28 19.5 M30 20 L32 22.5 L34 20 M36 19.5 L38 22 L40 19.5"
+        stroke="white"
+        strokeWidth="1.3"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M20 27 C18 40 22 52 32 58 C42 52 46 40 44 27 C38 31 26 31 20 27 Z" fill="currentColor" />
+      <rect x="14" y="34" width="36" height="5" rx="2.5" fill="currentColor" transform="rotate(-18 32 36.5)" />
+      <rect x="14" y="34" width="36" height="5" rx="2.5" fill="currentColor" transform="rotate(18 32 36.5)" />
+      <rect x="21" y="44" width="22" height="3" fill="black" />
+      <rect x="22" y="50" width="20" height="3" fill="black" />
+      <path d="M28 58 L32 64 L36 58 Z" fill="currentColor" />
     </svg>
   )
 }
