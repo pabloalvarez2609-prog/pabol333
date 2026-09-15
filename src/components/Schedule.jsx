@@ -48,12 +48,12 @@ export default function Schedule() {
                   <tr key={r} className="border-b border-white/5">
                     <td className="py-2 pr-4 font-display text-gold">{row[0]}</td>
                     {row.slice(1).map((cell, i) => (
-                      <td key={i} className="px-2 py-2 text-center text-xs text-gray-300">
+                      <td key={i} className="px-1.5 py-1.5 text-center">
                         {editing ? (
                           <select
                             value={cell}
                             onChange={(e) => updateField(`schedule.rows.${r}.${i + 1}`, e.target.value)}
-                            className="rounded-sm border border-cyan-400/40 bg-black px-1 py-0.5 text-xs text-white outline-none"
+                            className="w-full rounded-sm border border-cyan-400/40 bg-black px-1 py-1 text-xs text-white outline-none"
                           >
                             {ACTIVITIES.map((a) => (
                               <option key={a} value={a}>
@@ -61,13 +61,13 @@ export default function Schedule() {
                               </option>
                             ))}
                           </select>
-                        ) : cell !== '—' ? (
-                          <span className="inline-flex items-center gap-1.5">
-                            <span className={`h-1.5 w-1.5 rounded-full ${COLOR_BY_ACTIVITY[cell]}`} />
-                            {cell}
-                          </span>
                         ) : (
-                          '—'
+                          <div
+                            title={cell !== '—' ? cell : undefined}
+                            className={`mx-auto h-6 w-full max-w-16 rounded-sm ${
+                              cell !== '—' ? COLOR_BY_ACTIVITY[cell] : 'bg-white/5'
+                            }`}
+                          />
                         )}
                       </td>
                     ))}
