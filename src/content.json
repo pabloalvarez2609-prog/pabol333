@@ -1,0 +1,102 @@
+{
+  "theme": {
+    "gold": "#f5c518",
+    "goldDark": "#d9ad00"
+  },
+  "layout": {
+    "stats.0": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "hero": {
+    "badge": "24 AÑOS FORMANDO CAMPEONES",
+    "titleLine1": "ENTRENÁ",
+    "titleAccent": "DURO.",
+    "titleLine2": "VIVÍ HARD.",
+    "paragraph": "El gimnasio más completo de la ciudad. Musculación, pileta olímpica, clases grupales y entrenadores de élite. Tu transformación empieza acá.",
+    "ctaPrimary": "EMPEZÁ HOY →",
+    "ctaSecondary": "VER SERVICIOS"
+  },
+  "stats": [
+    {
+      "value": "24",
+      "label": "AÑOS DE EXPERIENCIA"
+    },
+    {
+      "value": "1.200+",
+      "label": "SOCIOS ACTIVOS"
+    },
+    {
+      "value": "30+",
+      "label": "ACTIVIDADES SEMANALES"
+    },
+    {
+      "value": "100%",
+      "label": "COMPROMISO"
+    }
+  ],
+  "pricing": {
+    "eyebrow": "ELEGÍ TU PLAN",
+    "title": "MEMBRESÍAS",
+    "plans": [
+      {
+        "name": "BÁSICO",
+        "price": "15.000",
+        "popular": false,
+        "features": [
+          "Musculación libre",
+          "Vestuarios y duchas",
+          "Acceso 6am–22pm",
+          "1 clase grupal / semana"
+        ]
+      },
+      {
+        "name": "HARD",
+        "price": "22.000",
+        "popular": true,
+        "features": [
+          "Todo BÁSICO incluido",
+          "Clases grupales ilimitadas",
+          "Acceso a pileta",
+          "Asesoramiento nutricional"
+        ]
+      },
+      {
+        "name": "ÉLITE",
+        "price": "32.000",
+        "popular": false,
+        "features": [
+          "Todo HARD incluido",
+          "Entrenador personal 2x/sem",
+          "Acceso 24 horas",
+          "Plan de nutrición mensual"
+        ]
+      }
+    ]
+  },
+  "testimonial": {
+    "eyebrow": "LO QUE DICEN NUESTROS SOCIOS",
+    "quote": "\"El HARD cambió mi vida. El ambiente, los profes, la pileta... es otro nivel. No me imagino entrenando en otro lugar.\"",
+    "initial": "M",
+    "name": "Martina G.",
+    "since": "SOCIA DESDE 2019"
+  },
+  "cta": {
+    "label": "HARD",
+    "title": "¿LISTO PARA EL DESAFÍO?",
+    "paragraph": "Consultá inicial gratis. Conocé las instalaciones y comenzá tu transformación hoy mismo.",
+    "button": "CONSULTÁ AHORA →"
+  },
+  "footer": {
+    "tagline": "24 años formando campeones. Tu comunidad fitness.",
+    "hours": [
+      "Lunes a Viernes: 6:00 – 23:00",
+      "Sábados: 7:00 – 21:00",
+      "Domingos: 8:00 – 20:00"
+    ],
+    "address": "📍 Av. Siempreviva 742, Buenos Aires",
+    "phone": "📞 011 4XXX-XXXX",
+    "email": "📧 info@hardgimnasio.com.ar"
+  }
+}

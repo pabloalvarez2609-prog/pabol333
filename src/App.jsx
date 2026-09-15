@@ -8,6 +8,8 @@ import Schedule from './components/Schedule'
 import Benefits from './components/Benefits'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import EditToolbar from './components/EditToolbar'
+import AlignmentGuides from './components/AlignmentGuides'
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <Benefits />
       <CTA />
       <Footer />
+      <EditToolbar />
+      <AlignmentGuides />
     </>
   )
 }

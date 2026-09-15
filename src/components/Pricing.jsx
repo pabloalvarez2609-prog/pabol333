@@ -1,54 +1,33 @@
-const PLANS = [
-  {
-    name: 'BÁSICO',
-    price: '15.000',
-    popular: false,
-    features: [
-      'Musculación libre',
-      'Vestuarios y duchas',
-      'Acceso 6am–22pm',
-      '1 clase grupal / semana',
-    ],
-  },
-  {
-    name: 'HARD',
-    price: '22.000',
-    popular: true,
-    features: [
-      'Todo BÁSICO incluido',
-      'Clases grupales ilimitadas',
-      'Acceso a pileta',
-      'Asesoramiento nutricional',
-    ],
-  },
-  {
-    name: 'ÉLITE',
-    price: '32.000',
-    popular: false,
-    features: [
-      'Todo HARD incluido',
-      'Entrenador personal 2x/sem',
-      'Acceso 24 horas',
-      'Plan de nutrición mensual',
-    ],
-  },
-]
+import { useContent } from '../ContentContext'
+import Editable from './Editable'
+import Draggable from './Draggable'
 
 export default function Pricing() {
+  const { content } = useContent()
+  const { pricing } = content
+
   return (
     <section id="planes" className="honeycomb px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <p className="text-center text-xs font-bold tracking-widest text-gold">ELEGÍ TU PLAN</p>
-        <h2 className="font-display mt-3 text-center text-4xl md:text-5xl">MEMBRESÍAS</h2>
+        <Editable
+          path="pricing.eyebrow"
+          value={pricing.eyebrow}
+          className="block text-center text-xs font-bold tracking-widest text-gold"
+        />
+        <Editable
+          path="pricing.title"
+          value={pricing.title}
+          className="font-display mt-3 block text-center text-4xl md:text-5xl"
+        />
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {PLANS.map((plan) => (
-            <div
-              key={plan.name}
+          {pricing.plans.map((plan, i) => (
+            <Draggable
+              key={i}
+              path={`pricing.plans.${i}`}
+              baseOffset={plan.popular ? { x: 0, y: -12 } : { x: 0, y: 0 }}
               className={`flex flex-col rounded-sm border p-8 ${
-                plan.popular
-                  ? 'border-gold bg-gold text-black md:-translate-y-3'
-                  : 'border-white/10 bg-black text-white'
+                plan.popular ? 'border-gold bg-gold text-black' : 'border-white/10 bg-black text-white'
               }`}
             >
               {plan.popular && (
@@ -56,19 +35,22 @@ export default function Pricing() {
                   MÁS POPULAR
                 </span>
               )}
-              <h3 className="font-display text-2xl">{plan.name}</h3>
+              <Editable path={`pricing.plans.${i}.name`} value={plan.name} className="font-display text-2xl" />
               <p className="font-display mt-4 text-4xl">
-                ${plan.price}
+                $
+                <Editable path={`pricing.plans.${i}.price`} value={plan.price} />
                 <span className="text-base font-sans font-normal opacity-70">/mes</span>
               </p>
 
               <ul className="mt-6 flex-1 space-y-3">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-sm">
+                {plan.features.map((feature, fi) => (
+                  <li key={fi} className="flex items-start gap-3 text-sm">
                     <span className={plan.popular ? 'text-black' : 'text-gold'}>◆</span>
-                    <span className={plan.popular ? 'text-black/80' : 'text-gray-300'}>
-                      {feature}
-                    </span>
+                    <Editable
+                      path={`pricing.plans.${i}.features.${fi}`}
+                      value={feature}
+                      className={plan.popular ? 'text-black/80' : 'text-gray-300'}
+                    />
                   </li>
                 ))}
               </ul>
@@ -83,7 +65,7 @@ export default function Pricing() {
               >
                 INSCRIBIRSE
               </a>
-            </div>
+            </Draggable>
           ))}
         </div>
       </div>
