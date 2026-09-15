@@ -48,6 +48,7 @@ export default function Draggable({ path, children, className = '', baseOffset =
 
   function handlePointerDown(e) {
     if (!editing || !isDesktop) return
+    if (e.target.closest('[contenteditable="true"]')) return
     e.preventDefault()
     const rect = nodeRef.current.getBoundingClientRect()
     dragState.current = {
