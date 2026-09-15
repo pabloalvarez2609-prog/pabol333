@@ -82,6 +82,33 @@
     "name": "Martina G.",
     "since": "SOCIA DESDE 2019"
   },
+  "schedule": {
+    "rows": [
+      ["07:00", "Natación", "Natación", "Natación", "Natación", "Natación"],
+      ["08:00", "Natación", "Aquaerobic", "Natación", "Aquaerobic", "Natación"],
+      ["09:00", "Natación", "Hidro-terapia", "Natación", "Hidro-terapia", "Natación"],
+      ["10:00", "Natación", "Hidro-terapia", "Natación", "Hidro-terapia", "Natación"],
+      ["11:00", "Hidro-terapia", "Natación", "Hidro-terapia", "Natación", "Hidro-terapia"],
+      ["12:00", "Hidro-terapia", "Natación", "Hidro-terapia", "Natación", "Hidro-terapia"],
+      ["13:00", "Hidro-terapia", "Natación", "Hidro-terapia", "Natación", "Hidro-terapia"],
+      ["14:00", "Aquaerobic", "Natación", "Aquaerobic", "Natación", "Aquaerobic"],
+      ["15:00", "Natación", "Natación", "Natación", "Natación", "Natación"],
+      ["16:00", "—", "Natación Niños", "—", "Natación Niños", "—"],
+      ["17:00", "—", "Natación Niños", "—", "Natación Niños", "—"],
+      ["18:00", "Natación Niños", "Natación Niños", "Natación Niños", "Natación Niños", "Natación"],
+      ["19:00", "Aquaerobic", "Natación", "Aquaerobic", "Natación", "Aquaerobic"],
+      ["20:00", "Natación", "Natación", "Natación", "Natación", "Natación"],
+      ["21:00", "Natación", "Natación", "Natación", "Natación", "Natación"]
+    ],
+    "muscTitle": "MUSCULACIÓN",
+    "weekdayLabel": "LUNES A VIERNES",
+    "weekdayHours": "7:00 a 22:00 hs",
+    "saturdayLabel": "SÁBADO",
+    "saturdayHours1": "10:00 a 13:00 hs",
+    "saturdayHours2": "18:00 a 20:30 hs",
+    "sundayLabel": "DOMINGOS / FERIADOS",
+    "sundayHours": "10:00 a 14:00 hs"
+  },
   "cta": {
     "label": "HARD",
     "title": "¿LISTO PARA EL DESAFÍO?",

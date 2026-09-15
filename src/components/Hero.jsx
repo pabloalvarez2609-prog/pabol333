@@ -23,7 +23,7 @@ export default function Hero() {
             <Editable
               path="hero.titleAccent"
               value={hero.titleAccent}
-              className="font-accent block translate-x-[0.06em] italic text-gold"
+              className="font-accent block italic text-gold"
             />
             <Editable path="hero.titleLine2" value={hero.titleLine2} className="font-display block text-white" />
           </h1>

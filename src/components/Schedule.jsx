@@ -1,22 +1,9 @@
+import { useContent } from '../ContentContext'
+import Editable from './Editable'
+
 const DAYS = ['LUN', 'MAR', 'MIE', 'JUE', 'VIE']
 
-const ROWS = [
-  ['07:00', 'Natación', 'Natación', 'Natación', 'Natación', 'Natación'],
-  ['08:00', 'Natación', 'Aquaerobic', 'Natación', 'Aquaerobic', 'Natación'],
-  ['09:00', 'Natación', 'Hidro-terapia', 'Natación', 'Hidro-terapia', 'Natación'],
-  ['10:00', 'Natación', 'Hidro-terapia', 'Natación', 'Hidro-terapia', 'Natación'],
-  ['11:00', 'Hidro-terapia', 'Natación', 'Hidro-terapia', 'Natación', 'Hidro-terapia'],
-  ['12:00', 'Hidro-terapia', 'Natación', 'Hidro-terapia', 'Natación', 'Hidro-terapia'],
-  ['13:00', 'Hidro-terapia', 'Natación', 'Hidro-terapia', 'Natación', 'Hidro-terapia'],
-  ['14:00', 'Aquaerobic', 'Natación', 'Aquaerobic', 'Natación', 'Aquaerobic'],
-  ['15:00', 'Natación', 'Natación', 'Natación', 'Natación', 'Natación'],
-  ['16:00', '—', 'Natación Niños', '—', 'Natación Niños', '—'],
-  ['17:00', '—', 'Natación Niños', '—', 'Natación Niños', '—'],
-  ['18:00', 'Natación Niños', 'Natación Niños', 'Natación Niños', 'Natación Niños', 'Natación'],
-  ['19:00', 'Aquaerobic', 'Natación', 'Aquaerobic', 'Natación', 'Aquaerobic'],
-  ['20:00', 'Natación', 'Natación', 'Natación', 'Natación', 'Natación'],
-  ['21:00', 'Natación', 'Natación', 'Natación', 'Natación', 'Natación'],
-]
+const ACTIVITIES = ['—', 'Natación', 'Aquaerobic', 'Hidro-terapia', 'Natación Niños']
 
 const LEGEND = [
   { label: 'NATACIÓN', color: 'bg-blue-400' },
@@ -33,6 +20,9 @@ const COLOR_BY_ACTIVITY = {
 }
 
 export default function Schedule() {
+  const { content, editing, updateField } = useContent()
+  const { schedule } = content
+
   return (
     <section className="bg-black px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
@@ -54,12 +44,24 @@ export default function Schedule() {
                 </tr>
               </thead>
               <tbody>
-                {ROWS.map((row) => (
-                  <tr key={row[0]} className="border-b border-white/5">
+                {schedule.rows.map((row, r) => (
+                  <tr key={r} className="border-b border-white/5">
                     <td className="py-2 pr-4 font-display text-gold">{row[0]}</td>
                     {row.slice(1).map((cell, i) => (
                       <td key={i} className="px-2 py-2 text-center text-xs text-gray-300">
-                        {cell !== '—' ? (
+                        {editing ? (
+                          <select
+                            value={cell}
+                            onChange={(e) => updateField(`schedule.rows.${r}.${i + 1}`, e.target.value)}
+                            className="rounded-sm border border-cyan-400/40 bg-black px-1 py-0.5 text-xs text-white outline-none"
+                          >
+                            {ACTIVITIES.map((a) => (
+                              <option key={a} value={a}>
+                                {a}
+                              </option>
+                            ))}
+                          </select>
+                        ) : cell !== '—' ? (
                           <span className="inline-flex items-center gap-1.5">
                             <span className={`h-1.5 w-1.5 rounded-full ${COLOR_BY_ACTIVITY[cell]}`} />
                             {cell}
@@ -85,20 +87,55 @@ export default function Schedule() {
           </div>
 
           <div className="rounded-sm border border-white/10 p-6">
-            <p className="font-display text-xl text-gold">MUSCULACIÓN</p>
+            <Editable path="schedule.muscTitle" value={schedule.muscTitle} className="font-display block text-xl text-gold" />
             <dl className="mt-4 space-y-4 text-sm">
               <div>
-                <dt className="font-semibold text-white">LUNES A VIERNES</dt>
-                <dd className="text-gray-400">7:00 a 22:00 hs</dd>
+                <Editable
+                  path="schedule.weekdayLabel"
+                  value={schedule.weekdayLabel}
+                  as="dt"
+                  className="block font-semibold text-white"
+                />
+                <Editable
+                  path="schedule.weekdayHours"
+                  value={schedule.weekdayHours}
+                  as="dd"
+                  className="block text-gray-400"
+                />
               </div>
               <div>
-                <dt className="font-semibold text-white">SÁBADO</dt>
-                <dd className="text-gray-400">10:00 a 13:00 hs</dd>
-                <dd className="text-gray-400">18:00 a 20:30 hs</dd>
+                <Editable
+                  path="schedule.saturdayLabel"
+                  value={schedule.saturdayLabel}
+                  as="dt"
+                  className="block font-semibold text-white"
+                />
+                <Editable
+                  path="schedule.saturdayHours1"
+                  value={schedule.saturdayHours1}
+                  as="dd"
+                  className="block text-gray-400"
+                />
+                <Editable
+                  path="schedule.saturdayHours2"
+                  value={schedule.saturdayHours2}
+                  as="dd"
+                  className="block text-gray-400"
+                />
               </div>
               <div>
-                <dt className="font-semibold text-white">DOMINGOS / FERIADOS</dt>
-                <dd className="text-gray-400">10:00 a 14:00 hs</dd>
+                <Editable
+                  path="schedule.sundayLabel"
+                  value={schedule.sundayLabel}
+                  as="dt"
+                  className="block font-semibold text-white"
+                />
+                <Editable
+                  path="schedule.sundayHours"
+                  value={schedule.sundayHours}
+                  as="dd"
+                  className="block text-gray-400"
+                />
               </div>
             </dl>
           </div>
