@@ -32,7 +32,7 @@ export default function EditToolbar() {
           </span>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-3">
           <label className="flex items-center gap-2 text-xs text-gray-300">
             Dorado
             <input
